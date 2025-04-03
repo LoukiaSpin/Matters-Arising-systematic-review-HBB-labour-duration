@@ -37,11 +37,12 @@ first_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ctr
 # Save as .tiff
 tiff("./Figures/Figure 1.tiff", 
      height = 28, 
-     width = 38, 
+     width = 30, 
      units = 'cm', 
      compression = "lzw", 
      res = 300)
 forest(first_res, 
+       rightcols = c("effect", "ci"),
        print.I2.ci = TRUE,
        print.tau = TRUE,
        print.tau.ci = TRUE,
@@ -72,11 +73,12 @@ second_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ct
 # Save as .tiff
 tiff("./Figures/Figure 2.tiff", 
      height = 28, 
-     width = 38, 
+     width = 30, 
      units = 'cm', 
      compression = "lzw", 
      res = 300)
 forest(second_res, 
+       rightcols = c("effect", "ci"),
        print.I2.ci = TRUE,
        print.tau = TRUE,
        print.tau.ci = TRUE,
@@ -107,11 +109,12 @@ third_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ctr
 # Save as .tiff
 tiff("./Figures/Figure 3.tiff", 
      height = 28, 
-     width = 38, 
+     width = 30, 
      units = 'cm', 
      compression = "lzw", 
      res = 300)
 forest(third_res, 
+       rightcols = c("effect", "ci"),
        print.I2.ci = TRUE,
        print.tau = TRUE,
        print.tau.ci = TRUE,
