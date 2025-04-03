@@ -8,19 +8,18 @@
 
 
 ## Load libraries ----
-list.of.packages <- c("readxl", "meta", "ggplot2")
-lapply(list.of.packages, require, character.only = TRUE); rm(list.of.packages)
+library(meta)
 
 
 ## Load datasets ----
 # First labour stage
-first_stage <- as.data.frame(read_excel("./30_Analysis/Extracted forestplot data.xlsx", sheet = "Figure 6 (First stage)"))
+load("./data/first_stage_data.RData")
 
 # Second labour stage
-second_stage <- as.data.frame(read_excel("./30_Analysis/Extracted forestplot data.xlsx", sheet = "Figure 7 (Second stage)"))
+load("./data/second_stage_data.RData")
 
 # Third labour stage
-third_stage <- as.data.frame(read_excel("./30_Analysis/Extracted forestplot data.xlsx", sheet = "Figure 8 (Third stage)"))
+load("./data/third_stage_data.RData")
 
 
 ## Common-effect and Random-effects subgroup MAs 
@@ -36,7 +35,7 @@ first_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ctr
                       sm = "MD")
 
 # Save as .tiff
-tiff("./30_Analysis/Figure 1.tiff", 
+tiff("./Figures/Figure 1.tiff", 
      height = 28, 
      width = 38, 
      units = 'cm', 
@@ -71,7 +70,7 @@ second_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ct
                        sm = "MD")
 
 # Save as .tiff
-tiff("./30_Analysis/Figure 2.tiff", 
+tiff("./Figures/Figure 2.tiff", 
      height = 28, 
      width = 38, 
      units = 'cm', 
@@ -106,7 +105,7 @@ third_res <- metacont(total_HBB, mean_HBB, sd_HBB, total_ctrl, mean_ctrl, sd_ctr
                       sm = "MD")
 
 # Save as .tiff
-tiff("./30_Analysis/Figure 3.tiff", 
+tiff("./Figures/Figure 3.tiff", 
      height = 28, 
      width = 38, 
      units = 'cm', 
