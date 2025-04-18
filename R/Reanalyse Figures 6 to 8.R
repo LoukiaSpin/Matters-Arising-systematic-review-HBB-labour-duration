@@ -8,6 +8,7 @@
 
 
 ## Load libraries ----
+remotes::install_github("guido-s/meta", ref = "develop", build_vignettes = TRUE)
 library(meta)
 
 
